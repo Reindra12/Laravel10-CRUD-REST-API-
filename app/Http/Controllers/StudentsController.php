@@ -73,9 +73,10 @@ class StudentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(students $students)
+    public function show($id)
     {
-        //
+        $students = students::find($id);
+        return new StudentsResource(true, 'Detail Data Mahasiswa', $students);
     }
 
     /**
